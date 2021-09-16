@@ -26,7 +26,7 @@ healthPlayer()
         self.healthText setPoint("CENTER", "CENTER", 100, 180);
         while(true)
               {
-               self.healthText setText( "Vida: ^2"+ self.health);
+               self.healthText setText( "Health: ^2"+ self.health);
                wait 0.5;
               }
 }

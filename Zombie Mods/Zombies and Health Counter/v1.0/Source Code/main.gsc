@@ -21,11 +21,12 @@ onPlayerConnect()
 healthPlayer()
 {
 	self endon("disconnect");
+	level waittill( "start_of_round" );
 	self.healthText = createFontString("Objective" , 1.5);
         self.healthText setPoint("CENTER", "CENTER", 100, 180);
         while(true)
               {
-               self.healthText setText( "Health: ^2"+ self.health);
+               self.healthText setText( "Vida: ^2"+ self.health);
                wait 0.5;
               }
 }
@@ -46,7 +47,6 @@ drawZombiesCounter()
         	self.zombiesCounter.label = &"Zombies: ^1";
         	if( self.zombiesCounter.alpha != 1 )
         	{
-        		self.zombiesCounter fadeovertime( 0.5 );
     			self.zombiesCounter.alpha = 1;
     		}
         }
@@ -57,12 +57,10 @@ drawZombiesCounter()
         	{
         		if( self.zombiesCounter.alpha == 1 )
         		{
-        			self.zombiesCounter fadeovertime( 0.5 );
     				self.zombiesCounter.alpha = 0;
     			}
     			else
     			{
-    				self.zombiesCounter fadeovertime( 0.5 );
     				self.zombiesCounter.alpha = 1;
     			}
     			wait 0.5;
@@ -72,5 +70,4 @@ drawZombiesCounter()
         wait 0.05;
     }
 }
-
 

@@ -54,20 +54,9 @@ drawZombiesCounter()
         {
         	self.zombiesCounter.label = &"Zombies: ^6";
         	for( i = 0; i < 15; i++ )
-        	{
-        		if( self.zombiesCounter.alpha == 1 )
-        		{
-    				self.zombiesCounter.alpha = 0;
-    			}
-    			else
-    			{
-    				self.zombiesCounter.alpha = 1;
-    			}
-    			wait 0.5;
-    		}
+    		wait 0.5;
         	level waittill( "start_of_round" );
         }
         wait 0.05;
     }
 }
-
